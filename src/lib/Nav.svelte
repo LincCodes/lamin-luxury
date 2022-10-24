@@ -34,6 +34,13 @@
             <li><a href="/events">Events</a>
             <li><a href="/about">About Us</a></li>
             <li><a href="/contact">Contact</a></li>
+            {#if !$page.data.session}
+            <li><button on:click={login} class="btn btn-link">Log In</button></li>
+            <li><button on:click={register} class="btn btn-primary">Register</button></li>
+            {:else}
+            <li><a href="profile"><i class="fa fa-user-circle-o fa-lg" aria-hidden="true"></i></a></li>
+            <li><button class="btn btn-success" on:click={signout}>Sign Out</button></li>
+            {/if}
         </ul>
     </nav>
     <div id="mobile-menu-wrap"></div>

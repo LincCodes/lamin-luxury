@@ -1,6 +1,9 @@
 <script>
+// @ts-nocheck
+
     import Nav from "$lib/Nav.svelte";
     import Footer from "$lib/Footer.svelte";
+    export let data;
 </script>
 
 <Nav></Nav>
@@ -27,60 +30,19 @@
 <section class="blog-section blog-page spad">
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 col-md-6">
-                <div class="blog-item set-bg" data-setbg="img/blog/blog-1.jpg">
-                    <div class="bi-text">
-                        <span class="b-tag">Travel Trip</span>
-                        <h4><a href="./blog-details.html">Tremblant In Canada</a></h4>
-                        <div class="b-time"><i class="icon_clock_alt"></i> 15th April, 2019</div>
+            {#await data then value}
+                {#each data.data as value}
+                <div class="col-lg-4 col-md-6" style="text-shadow: 2px 2px 4px #000">
+                    <div class="blog-item set-bg" data-setbg="{value.img2}">
+                        <div class="bi-text">
+                            <span class="b-tag">{value.type}</span>
+                            <h4><a href="/events/{value.id}">{value.title}</a></h4>
+                            <div class="b-time"><i class="icon_clock_alt"></i>{value.date}</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="blog-item set-bg" data-setbg="img/blog/blog-2.jpg">
-                    <div class="bi-text">
-                        <span class="b-tag">Camping</span>
-                        <h4><a href="./blog-details.html">Choosing A Static Caravan</a></h4>
-                        <div class="b-time"><i class="icon_clock_alt"></i> 15th April, 2019</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="blog-item set-bg" data-setbg="img/blog/blog-3.jpg">
-                    <div class="bi-text">
-                        <span class="b-tag">Event</span>
-                        <h4><a href="./blog-details.html">Copper Canyon</a></h4>
-                        <div class="b-time"><i class="icon_clock_alt"></i> 21th April, 2019</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="blog-item set-bg" data-setbg="img/blog/blog-4.jpg">
-                    <div class="bi-text">
-                        <span class="b-tag">Trivago</span>
-                        <h4><a href="./blog-details.html">A Time Travel Postcard</a></h4>
-                        <div class="b-time"><i class="icon_clock_alt"></i> 22th April, 2019</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="blog-item set-bg" data-setbg="img/blog/blog-5.jpg">
-                    <div class="bi-text">
-                        <span class="b-tag">Camping</span>
-                        <h4><a href="./blog-details.html">A Time Travel Postcard</a></h4>
-                        <div class="b-time"><i class="icon_clock_alt"></i> 25th April, 2019</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="blog-item set-bg" data-setbg="img/blog/blog-6.jpg">
-                    <div class="bi-text">
-                        <span class="b-tag">Travel Trip</span>
-                        <h4><a href="./blog-details.html">Virginia Travel For Kids</a></h4>
-                        <div class="b-time"><i class="icon_clock_alt"></i> 28th April, 2019</div>
-                    </div>
-                </div>
-            </div>
+                {/each}
+            {/await}
         </div>
     </div>
 </section>
