@@ -172,7 +172,7 @@
                             <td>{v.check_out}</td>
                             <td>{v.status}</td>
                             {#if v.status == "Not Paid"}
-                            <td><button class="btn btn-danger" type="button">Check Out</button></td>
+                            <td><a href="/payment/{v.room_type}" class="btn btn-danger" type="button">Check Out</a></td>
                             {:else}
                             <td><button class="btn btn-warning" type="button" disabled>Already Paid</button></td>
 
