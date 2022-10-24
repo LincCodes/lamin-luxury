@@ -20,6 +20,7 @@
 	"type": "module",
 	"dependencies": {
 		"@supabase/auth-helpers-sveltekit": "^0.8.2",
-		"@supabase/supabase-js": "^2.0.4"
+		"@supabase/supabase-js": "^2.0.4",
+		"uuid": "^9.0.0"
 	}
 }
