@@ -11,8 +11,8 @@ import { page } from '$app/stores';
         const card = e.target.card.value;
         const date = e.target.date.value;
         const cvv = e.target.cvv.value;
-        let pat = $page.url.pathname.split("/").pop()
-        console.log(pat);
+        let path = $page.url.pathname.split("/").pop()
+        console.log(path);
         if(!$page.data.session){
             goto("/login")
         }else{
@@ -23,12 +23,12 @@ import { page } from '$app/stores';
                 const { error } = await supabaseClient
                 .from('Room')
                 .update({ occupied: false })
-                .eq('room_type', pat) 
-                if (condition) {
+                .eq('room_type', $page.url.pathname.split("/").pop()) 
+                if (!error) {
                     const { error } = await supabaseClient
                     .from('Booking')
                     .update({ status: "Paid" })
-                    .eq('room_type', pat) 
+                    .eq('room_type', $page.url.pathname.split("/").pop()) 
                     if (!error) {
                         goto("/profile/" + $page.data.session.user.email)
                     }
