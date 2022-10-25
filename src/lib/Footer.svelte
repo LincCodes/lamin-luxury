@@ -1,3 +1,26 @@
+<script>
+// @ts-nocheck
+    import { supabaseClient } from './db'
+
+    async function sub(e) {
+        const email = e.target.email.value;
+        const { error } = await supabaseClient
+            .from('Subscription')
+            .insert({ email})
+        if (!error) {
+            alert("Thanks for subscribing")
+        }else{
+            if ('duplicate key value violates unique constraint "Subscription_pkey"' == error.message) { 
+                alert("Already subscribed")
+            }
+        }
+        //RESET A FORM
+        e.target.reset()
+            
+    }
+
+</script>
+
 <!-- Footer Section Begin -->
 <footer class="footer-section">
     <div class="container">
@@ -6,8 +29,8 @@
                 <div class="col-lg-4">
                     <div class="ft-about">
                         <div class="logo">
-                            <a href="#">
-                                <img src="img/footer-logo.png" alt="">
+                            <a href="/">
+                                <h2 class="text-white">Lamin</h2>
                             </a>
                         </div>
                         <p>We inspire and reach millions of travelers</p>
@@ -17,7 +40,7 @@
                     <div class="ft-contact">
                         <h6>Contact Us</h6>
                         <ul>
-                            <li>+260 971 00 00 00</li>
+                            <li>+260 977 234 567</li>
                             <li>laminluxury@gmail.com</li>
                             <li>Some place at UNZA</li>
                         </ul>
@@ -27,8 +50,8 @@
                     <div class="ft-newslatter">
                         <h6>New latest</h6>
                         <p>Get the latest updates and offers.</p>
-                        <form action="#" class="fn-form">
-                            <input type="text" placeholder="Email">
+                        <form on:submit|preventDefault={sub} class="fn-form">
+                            <input type="text" placeholder="Email" name="email">
                             <button type="submit"><i class="fa fa-send"></i></button>
                         </form>
                     </div>

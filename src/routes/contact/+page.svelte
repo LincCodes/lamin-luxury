@@ -1,6 +1,24 @@
 <script>
+// @ts-nocheck
+
     import Nav from "$lib/Nav.svelte";
     import Footer from "$lib/Footer.svelte";
+    import { v4 as uuidv4 } from 'uuid';
+    import { supabaseClient } from "$lib/db";
+
+    async function contact(e) {
+        const email = e.target.email.value;
+        const name = e.target.name.value;
+        const message = e.target.message.value;
+        const { error } = await supabaseClient
+            .from('Contact')
+            .insert({  contact_id: uuidv4(),email, name, message })
+        if (!error) {
+            alert("Thanks for Contacting Us")
+        }
+        console.log(error)
+        e.target.reset()
+    }
 </script>
 
 <Nav></Nav>
@@ -18,36 +36,32 @@
                         <tbody>
                             <tr>
                                 <td class="c-o">Address:</td>
-                                <td>856 Cordia Extension Apt. 356, Lake, US</td>
+                                <td>Some Place at UNZA</td>
                             </tr>
                             <tr>
                                 <td class="c-o">Phone:</td>
-                                <td>(12) 345 67890</td>
+                                <td>+260 977 234 567</td>
                             </tr>
                             <tr>
                                 <td class="c-o">Email:</td>
-                                <td>info.colorlib@gmail.com</td>
-                            </tr>
-                            <tr>
-                                <td class="c-o">Fax:</td>
-                                <td>+(12) 345 67890</td>
+                                <td>laminluxury@gmail.com</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
             <div class="col-lg-7 offset-lg-1">
-                <form action="#" class="contact-form">
+                <form on:submit|preventDefault={contact} class="contact-form">
                     <div class="row">
                         <div class="col-lg-6">
-                            <input type="text" placeholder="Your Name">
+                            <input type="text" placeholder="Your Name" name="name" required>
                         </div>
                         <div class="col-lg-6">
-                            <input type="text" placeholder="Your Email">
+                            <input type="text" placeholder="Your Email" name="email" required>
                         </div>
                         <div class="col-lg-12">
-                            <textarea placeholder="Your Message"></textarea>
-                            <button type="submit">Submit Now</button>
+                            <textarea placeholder="Your Message" name="message" required></textarea>
+                            <button type="submit" class="btn btn-warning">Submit Now</button>
                         </div>
                     </div>
                 </form>

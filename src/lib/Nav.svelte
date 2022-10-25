@@ -55,7 +55,7 @@
                 <div class="col-lg-2">
                     <div class="logo">
                         <a href="/">
-                            <img src="img/logo.png" alt="">
+                            <h2>Lamin</h2>
                         </a>
                     </div>
                 </div>
