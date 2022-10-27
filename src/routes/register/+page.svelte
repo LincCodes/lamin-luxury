@@ -37,11 +37,16 @@
                     { id: email,name,phone,city,country, address, gender  }
                 ])
                 if (data) {
-                    alert("Please check your email app to verify your email")
-                    goto("/")
-                } else if(error) {
                     hide = "d-inline-block";
-                    err = error.message;
+                    err = "Please check your email app to verify your email then login"
+                } else if(error) {
+                    if ('duplicate key value violates unique constraint "Customer_pkey"' == error.message) { 
+                        hide = "d-inline-block";
+                        err = "This user already exist"
+                    }else{
+                        hide = "d-inline-block";
+                        err = error.message;
+                    }
                 }
             }
         }else{
@@ -107,8 +112,8 @@
                     </div>
                 </div>
                 <div class="col-md-6 mb-4">
-                    <select class="form-select" name="gender">
-                        <optgroup label="Select a gender">
+                    <select class="form-control" name="gender">
+                        <optgroup label="Select a gender"  >
                             <option value="Female">Female</option>
                             <option value="Male">Male</option>
                         </optgroup>
