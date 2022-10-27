@@ -17,9 +17,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="hero-text text-center">
-                        <h1>Sona A Luxury Hotel</h1>
-                        <p>Here are the best hotel booking sites, including recommendations for international
-                            travel and for finding low-priced hotel rooms.</p>
+                        <h1>Lamin Luxury Hotel</h1>
+                        <p>A Luxury place to be with the best quality services offered to all our customers. Click below to check out our current rooms.</p>
                         <a href="rooms" class="primary-btn">View Rooms</a>
 
                     </div>
@@ -42,14 +41,14 @@
                     <div class="about-text">
                         <div class="section-title">
                             <span>About Us</span>
-                            <h2>Intercontinental LA <br />Westlake Hotel</h2>
+                            <h2>Lamin Hotel</h2>
                         </div>
-                        <p class="f-para">Sona.com is a leading online accommodation site. We’re passionate about
+                        <p class="f-para">Lamin.com is a leading online hotel booking site. We’re passionate about
                             travel. Every day, we inspire and reach millions of travelers across 90 local websites in 41
                             languages.</p>
                         <p class="s-para">So when it comes to booking the perfect hotel, vacation rental, resort,
                             apartment, guest house, or tree house, we’ve got you covered.</p>
-                        <a href="about" class="primary-btn about-btn">Read More</a>
+                        <a href="/about" class="primary-btn about-btn">Read More</a>
                     </div>
                 </div>
                 <div class="col-lg-6">

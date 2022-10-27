@@ -13,6 +13,7 @@
     
         // @ts-ignore
     async function register(e) {
+        hide = "d-none";
         const email = e.target.email.value;
         const password = e.target.password.value;
         const pass = e.target.pass.value;

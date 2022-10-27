@@ -2,16 +2,26 @@
 // @ts-nocheck
     import { supabaseClient } from './db'
 
+    let hide = "d-none";
+    let err = '';
+
+    function hiding() {
+        hide = "d-none";
+    }
+
     async function sub(e) {
+        hide = "d-none";
         const email = e.target.email.value;
         const { error } = await supabaseClient
             .from('Subscription')
             .insert({ email})
         if (!error) {
-            alert("Thanks for subscribing")
+            hide = "d-inline-block";
+            err = "Thank you for subscribing to our newsletter"
         }else{
             if ('duplicate key value violates unique constraint "Subscription_pkey"' == error.message) { 
-                alert("Already subscribed")
+                hide = "d-inline-block";
+                err = "Already subscribed"
             }
         }
         //RESET A FORM
@@ -50,6 +60,7 @@
                     <div class="ft-newslatter">
                         <h6>New latest</h6>
                         <p>Get the latest updates and offers.</p>
+                        <div class="alert alert-success {hide}" role="alert">{err}</div>
                         <form on:submit|preventDefault={sub} class="fn-form">
                             <input type="text" placeholder="Email" name="email">
                             <button type="submit"><i class="fa fa-send"></i></button>

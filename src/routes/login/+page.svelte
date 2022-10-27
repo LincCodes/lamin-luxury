@@ -13,6 +13,7 @@
     
     // @ts-ignore
     async function login(e) {
+        hide = "d-none";
         const email = e.target.email.value;
         const password = e.target.password.value;
 

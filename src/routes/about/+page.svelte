@@ -30,9 +30,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="ap-title text-center">
-                        <p>Built in 1910 during the Belle Epoque period, this hotel is located in the center of
-                            Paris, with easy access to the city’s tourist attractions. It offers tastefully
-                            decorated rooms.</p>
+                        <p>A Luxury place to be with the best quality services offered to all our customers.</p>
                     </div>
                 </div>
             </div>
@@ -82,48 +80,42 @@
                 <div class="service-item">
                     <i class="flaticon-036-parking"></i>
                     <h4>Travel Plan</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna.</p>
+                    <p>We have tour guiuds and expert drivers to help you get anywhere among the many tourist attractions around.</p>
                 </div>
             </div>
             <div class="col-lg-4 col-sm-6">
                 <div class="service-item">
                     <i class="flaticon-033-dinner"></i>
                     <h4>Catering Service</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna.</p>
+                    <p>Enjoy many of our world class dishes in your room service pack or at our world standard restaurant.</p>
                 </div>
             </div>
             <div class="col-lg-4 col-sm-6">
                 <div class="service-item">
                     <i class="flaticon-026-bed"></i>
                     <h4>Babysitting</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna.</p>
+                    <p>Your children are safe with us as we provide 24/7 nanny servies whilest you enjoy your time away.</p>
                 </div>
             </div>
             <div class="col-lg-4 col-sm-6">
                 <div class="service-item">
                     <i class="flaticon-024-towel"></i>
                     <h4>Laundry</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna.</p>
+                    <p>Rooom service caters for all your laundry requirements</p>
                 </div>
             </div>
             <div class="col-lg-4 col-sm-6">
                 <div class="service-item">
                     <i class="flaticon-044-clock-1"></i>
                     <h4>Hire Driver</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna.</p>
+                    <p>Expert drivers are available for you as per request.</p>
                 </div>
             </div>
             <div class="col-lg-4 col-sm-6">
                 <div class="service-item">
                     <i class="flaticon-012-cocktail"></i>
                     <h4>Bar & Drink</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna.</p>
+                    <p>This is part of our room service package or you could help yourself to our more public bar.</p>
                 </div>
             </div>
         </div>

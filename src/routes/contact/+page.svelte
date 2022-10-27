@@ -6,7 +6,15 @@
     import { v4 as uuidv4 } from 'uuid';
     import { supabaseClient } from "$lib/db";
 
+    let hide = "d-none";
+    let err = '';
+
+    function hiding() {
+        hide = "d-none";
+    }
+
     async function contact(e) {
+        hide = "d-none";
         const email = e.target.email.value;
         const name = e.target.name.value;
         const message = e.target.message.value;
@@ -14,7 +22,8 @@
             .from('Contact')
             .insert({  contact_id: uuidv4(),email, name, message })
         if (!error) {
-            alert("Thanks for Contacting Us")
+            hide = "d-inline-block";
+            err = "Thank you for Contacting Us"
         }
         console.log(error)
         e.target.reset()
@@ -30,8 +39,7 @@
             <div class="col-lg-4">
                 <div class="contact-text">
                     <h2>Contact Info</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua.</p>
+                    <p>Feel free to each out to us</p>
                     <table>
                         <tbody>
                             <tr>
@@ -52,6 +60,7 @@
             </div>
             <div class="col-lg-7 offset-lg-1">
                 <form on:submit|preventDefault={contact} class="contact-form">
+                    <div class="alert alert-success {hide}" role="alert">{err}</div>
                     <div class="row">
                         <div class="col-lg-6">
                             <input type="text" placeholder="Your Name" name="name" required>
