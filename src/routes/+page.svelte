@@ -43,7 +43,7 @@
                             <span>About Us</span>
                             <h2>Lamin Hotel</h2>
                         </div>
-                        <p class="f-para">Lamin.com is a leading online hotel booking site. We’re passionate about
+                        <p class="f-para">Lamin Luxury Hotel is a online hotel booking site. We’re passionate about
                             travel. Every day, we inspire and reach millions of travelers across 90 local websites in 41
                             languages.</p>
                         <p class="s-para">So when it comes to booking the perfect hotel, vacation rental, resort,
