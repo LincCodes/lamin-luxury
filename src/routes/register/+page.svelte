@@ -36,7 +36,7 @@
                     // @ts-ignore
                     { id: email,name,phone,city,country, address, gender  }
                 ])
-                if (data) {
+                if (!error) {
                     hide = "d-inline-block";
                     err = "Please check your email app to verify your email then login"
                 } else if(error) {
@@ -45,7 +45,7 @@
                         err = "This user already exist"
                     }else{
                         hide = "d-inline-block";
-                        err = error.message;
+                        err = "This user already exist," + " please log in"
                     }
                 }
             }
