@@ -21,7 +21,7 @@
         const { user, error } = await supabaseClient.auth.signInWithPassword({email,password})
         if (error) {
             hide = "d-inline-block";
-            err = error.message + ", check your email app";
+            err = error.message;
         } else {
             goto("/")
         }
