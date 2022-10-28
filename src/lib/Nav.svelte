@@ -7,9 +7,8 @@
         const { error } = await supabaseClient.auth.signOut()
         if (error) {
             alert(error.message)
-        }else{
-            goto("/")
         }
+        goto("/")
     }
 
     function login() {
